@@ -11,9 +11,6 @@ module.exports = function initialize() {
   if (useFileRouter) {
     // 文件式路由
     require('./fileRouter')()
-  } else {
-    // 自定义配置路由
-    require('./customRouter')()
   }
   if (isDev) {
     require('@zc/dev-utils/mock').init()

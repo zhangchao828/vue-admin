@@ -1,4 +1,4 @@
-import { matchPath } from 'react-router-dom'
+import matchPath from './matchPath'
 
 function getPathSplitLen(path) {
   // 获取路径按照符号 / 分割的长度
@@ -70,20 +70,20 @@ function matchRoute(pathname, routesMap) {
   return route && { match, ...route }
 }
 
-export function wrapPage(page = null, options) {
-  const { layouts = [], layoutsMap = {} } = options || {}
-  // 递归嵌套layout将Page包裹住
-  function wrapContent(index = 0) {
-    const name = layouts[index]
-    if (name) {
-      const LayoutItem = layoutsMap[name]
-      return <LayoutItem>{wrapContent(index + 1)}</LayoutItem>
-    } else {
-      return page
-    }
-  }
-  return wrapContent()
-}
+// export function wrapPage(page = null, options) {
+//   const { layouts = [], layoutsMap = {} } = options || {}
+//   // 递归嵌套layout将Page包裹住
+//   function wrapContent(index = 0) {
+//     const name = layouts[index]
+//     if (name) {
+//       const LayoutItem = layoutsMap[name]
+//       return <LayoutItem>{wrapContent(index + 1)}</LayoutItem>
+//     } else {
+//       return page
+//     }
+//   }
+//   return wrapContent()
+// }
 export function matchPage(pathname, routesMap) {
   if (!routesMap) {
     return { match: false, layouts: [], Page: null }

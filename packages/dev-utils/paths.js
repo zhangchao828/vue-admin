@@ -20,9 +20,9 @@ module.exports = {
   __temporary: resolvePath(temporary),
   __admin: resolvePath('node_modules/@zc/admin'),
   __entryDir: resolvePath(`${temporary}/entry`),
-  __entry: resolvePath(temporary, 'entry/index.jsx'),
-  __entryRelative: `/${temporary}/entry/index.jsx`,
-  __routes: resolvePath(`${temporary}/routes.jsx`),
+  __entry: resolvePath(temporary, 'entry/index.js'),
+  __entryRelative: `/${temporary}/entry/index.js`,
+  __routes: resolvePath(`${temporary}/routes.js`),
   __remotes: resolvePath(`${temporary}/remotes.js`),
   __mock: resolvePath('mock'),
 }

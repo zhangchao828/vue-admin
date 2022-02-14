@@ -6,10 +6,11 @@ const { getConfig } = require('@zc/dev-utils/project')
 const { mf } = getConfig().webpack
 
 module.exports = function createEntry() {
+  fs.copySync(join(__dirname, 'App.vue'), join(__entryDir, 'App.vue'))
   if (mf?.remotes) {
-    fs.outputFileSync(join(__entryDir, 'index.jsx'), `import('./bootstrap')`)
-    fs.copySync(join(__dirname, 'bootstrap.jsx'), join(__entryDir, 'bootstrap.jsx'))
+    fs.outputFileSync(join(__entryDir, 'index.js'), `import('./bootstrap')`)
+    fs.copySync(join(__dirname, 'bootstrap.js'), join(__entryDir, 'bootstrap.js'))
   } else {
-    fs.copySync(join(__dirname, 'bootstrap.jsx'), join(__entryDir, 'index.jsx'))
+    fs.copySync(join(__dirname, 'bootstrap.js'), join(__entryDir, 'index.js'))
   }
 }

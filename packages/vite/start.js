@@ -1,5 +1,5 @@
 const { createServer } = require('vite')
-const react = require('@vitejs/plugin-react')
+const vue = require('@vitejs/plugin-vue')
 const rollupEslint = require('@rollup/plugin-eslint')
 const eslintFormatter = require('eslint-friendly-formatter')
 const { getConfig } = require('@zc/dev-utils/project')
@@ -17,7 +17,7 @@ async function start() {
   const server = await createServer({
     root: __root,
     configFile: false,
-    resolve: { alias },
+    resolve: { alias, conditions: ['.js', '.jsx', '.ts', '.tsx', '.css', '.less', '.vue'] },
     server: { port, proxy, open: false, host: true, https },
     define,
     css: {
@@ -41,7 +41,7 @@ async function start() {
           baseConfig: eslintConfig,
         }),
       },
-      react(),
+      vue(),
     ].filter(Boolean),
   })
   await server.listen()

@@ -1,7 +1,6 @@
 module.exports = {
-  plugins: ['react', 'react-hooks'],
-  extends: ['plugin:react/recommended', 'airbnb-base'].concat(
-    ['./import', './no', './react', './base'].map(require.resolve)
+  extends: ['plugin:vue/vue3-recommended', 'airbnb-base'].concat(
+    ['./import', './no', './base'].map(require.resolve)
   ),
   env: {
     browser: true,
@@ -12,11 +11,6 @@ module.exports = {
   },
   globals: {
     __ENV__: true,
-  },
-  settings: {
-    react: {
-      version: 'detect',
-    },
   },
   rules: {},
 }

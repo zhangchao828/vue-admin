@@ -6,4 +6,5 @@ module.exports = {
   '@': __src,
   '@env': path.join(__env, env),
   '~admin': __temporary,
+  vue: 'vue/dist/vue.esm-bundler.js',
 }

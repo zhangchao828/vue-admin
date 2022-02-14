@@ -7,7 +7,7 @@ function createSrcIndex() {
   const rootPath = getIndexPath(__src)
   if (!fs.pathExistsSync(rootPath)) {
     fs.outputFileSync(
-      join(__src, 'index.jsx'),
+      join(__src, 'index.vue'),
       `
 import { BrowserRouter } from 'react-router-dom'
 

@@ -1,2 +1,2 @@
-# zc-vue
+# vue admin
 vue admin
